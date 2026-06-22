@@ -33,11 +33,13 @@ function revealVisibleTargets() {
 function updateSectionProgress() {
   if (!trackedSections.length || !progressNav) return;
 
-  const scrollMiddle = window.scrollY + window.innerHeight * 0.42;
   let activeIndex = 0;
 
   trackedSections.forEach((section, index) => {
-    if (section.offsetTop <= scrollMiddle) activeIndex = index;
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= window.innerHeight * 0.58 && rect.bottom > window.innerHeight * 0.18) {
+      activeIndex = index;
+    }
   });
 
   sectionLinks.forEach((link, index) => {

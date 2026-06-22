@@ -941,8 +941,8 @@ h3 {
 }
 
 [data-reveal] {
-  opacity: 0;
-  transform: translateY(26px);
+  opacity: 1;
+  transform: translateY(12px);
   transition: opacity 720ms ease, transform 720ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -1183,6 +1183,7 @@ body::before {
   width: min(100%, 1360px);
   border-color: var(--dispatch-line);
   background: rgba(6, 19, 59, 0.96);
+  overflow: visible;
 }
 
 .site-header {
@@ -1844,5 +1845,379 @@ h3 {
 
   .how-section .section-heading {
     padding: 72px 24px;
+  }
+}
+
+/* Closer Dispatch section system: fixed side rail + moving light panels */
+:root {
+  --shield-light: #eaf5ff;
+  --shield-light-2: #dcecff;
+  --shield-panel-line: rgba(6, 19, 59, 0.18);
+}
+
+.dispatch-layout {
+  align-items: start;
+  background:
+    linear-gradient(90deg, rgba(184, 208, 255, 0.1) 0 1px, transparent 1px),
+    linear-gradient(rgba(184, 208, 255, 0.08) 0 1px, transparent 1px),
+    #06133b;
+  background-size: 96px 96px;
+}
+
+.side-index {
+  position: sticky;
+  top: 76px;
+  height: calc(100vh - 76px);
+  overflow: hidden;
+  align-self: start;
+}
+
+.side-index nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+}
+
+.side-index nav a {
+  min-height: 48px;
+}
+
+.side-progress {
+  left: 0;
+}
+
+.page-main {
+  background:
+    linear-gradient(90deg, rgba(184, 208, 255, 0.12) 0 1px, transparent 1px),
+    linear-gradient(rgba(184, 208, 255, 0.09) 0 1px, transparent 1px),
+    #071542;
+  background-size: 96px 96px;
+}
+
+.hero,
+.how-section {
+  background: rgba(6, 19, 59, 0.62);
+}
+
+.problem-section,
+.moves-section,
+.save-section,
+.compare-section,
+.access-section,
+.faq-section {
+  margin: 112px 40px 0;
+  padding: 58px 40px 112px;
+  border: 1px solid var(--shield-panel-line);
+  background:
+    linear-gradient(rgba(6, 19, 59, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 19, 59, 0.035) 1px, transparent 1px),
+    var(--shield-light);
+  background-size: 56px 56px;
+  color: var(--shield-ink);
+  clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px);
+}
+
+.problem-section:first-of-type {
+  margin-top: 112px;
+}
+
+.problem-section .eyebrow,
+.moves-section .eyebrow,
+.save-section .eyebrow,
+.compare-section .eyebrow,
+.access-section .eyebrow,
+.faq-section .eyebrow {
+  color: rgba(6, 19, 59, 0.68);
+  border-color: var(--shield-panel-line);
+}
+
+.problem-section .eyebrow span,
+.moves-section .eyebrow span,
+.save-section .eyebrow span,
+.compare-section .eyebrow span,
+.access-section .eyebrow span,
+.faq-section .eyebrow span {
+  background: var(--shield-ink);
+}
+
+.problem-section h2,
+.problem-section h3,
+.moves-section h2,
+.moves-section h3,
+.save-section h2,
+.save-section h3,
+.compare-section h2,
+.compare-section h3,
+.access-section h2,
+.access-section h3,
+.faq-section h2,
+.faq-section h3,
+.faq-list summary {
+  color: var(--shield-ink);
+}
+
+.problem-section .section-heading > p,
+.problem-section .split > p,
+.moves-section .section-heading > p,
+.moves-section .split > p,
+.save-section .section-heading > p,
+.save-section .split > p,
+.compare-section .section-heading > p,
+.compare-section .split > p,
+.access-section .section-heading > p,
+.access-section .split > p,
+.faq-section .section-heading > p,
+.faq-section .split > p,
+.faq-list p {
+  color: rgba(6, 19, 59, 0.68);
+}
+
+.problem-grid,
+.moves-list,
+.compare-table,
+.faq-list {
+  border: 1px solid var(--shield-panel-line);
+  background: rgba(234, 245, 255, 0.54);
+  box-shadow: none;
+}
+
+.problem-card,
+.moves-list article,
+.compare-row,
+.faq-list details {
+  border-color: var(--shield-panel-line);
+  background:
+    linear-gradient(rgba(6, 19, 59, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 19, 59, 0.045) 1px, transparent 1px),
+    rgba(234, 245, 255, 0.64);
+  background-size: 48px 48px;
+}
+
+.problem-card h3 span,
+.moves-list span {
+  color: rgba(6, 19, 59, 0.32);
+}
+
+.problem-card p,
+.moves-list p,
+.compare-row > *,
+.faq-list p {
+  color: rgba(6, 19, 59, 0.68);
+}
+
+.exposure-visual,
+.signal-visual,
+.denied-visual {
+  border-color: rgba(6, 19, 59, 0.18);
+  background:
+    repeating-linear-gradient(135deg, rgba(6, 19, 59, 0.06) 0 1px, transparent 1px 5px),
+    rgba(255, 255, 255, 0.24);
+}
+
+.signal-visual div,
+.denied-visual div {
+  background: rgba(234, 245, 255, 0.72);
+  border-color: rgba(6, 19, 59, 0.2);
+  color: rgba(6, 19, 59, 0.62);
+}
+
+.signal-visual b,
+.denied-visual b,
+.exposure-visual b {
+  color: var(--shield-ink);
+}
+
+.save-section {
+  margin-top: 112px;
+}
+
+.save-grid {
+  border: 1px solid var(--shield-panel-line);
+}
+
+.save-card {
+  background:
+    linear-gradient(rgba(6, 19, 59, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 19, 59, 0.045) 1px, transparent 1px),
+    rgba(234, 245, 255, 0.72);
+  background-size: 48px 48px;
+}
+
+.card-graphic {
+  border-color: rgba(6, 19, 59, 0.2);
+  background:
+    repeating-linear-gradient(135deg, rgba(6, 19, 59, 0.08) 0 1px, transparent 1px 5px),
+    rgba(255, 255, 255, 0.22);
+}
+
+.access-panel {
+  border-color: var(--shield-panel-line);
+  background:
+    repeating-linear-gradient(135deg, rgba(6, 19, 59, 0.06) 0 1px, transparent 1px 5px),
+    rgba(234, 245, 255, 0.58);
+}
+
+.access-panel input {
+  border-color: rgba(6, 19, 59, 0.22);
+  color: var(--shield-ink);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.access-panel button {
+  background: var(--shield-ink);
+  color: var(--shield-light);
+}
+
+.feature-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  min-height: 260px;
+  margin: 112px 40px 0;
+  border-block: 1px solid var(--dispatch-line);
+  background: rgba(5, 15, 48, 0.34);
+}
+
+.feature-strip article {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: 44px 34px;
+  border-right: 1px solid var(--dispatch-line);
+}
+
+.feature-strip article:last-child {
+  border-right: 0;
+}
+
+.feature-strip h3 {
+  margin: 18px 0 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.feature-strip p {
+  max-width: 220px;
+  margin: 0;
+  color: var(--dispatch-muted);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.strip-icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+  opacity: 0.68;
+  border: 1px solid var(--dispatch-line-strong);
+}
+
+.plug-icon {
+  border-radius: 0 0 8px 8px;
+  border-top: 0;
+  box-shadow: inset 8px 0 0 transparent, 0 -8px 0 -6px var(--dispatch-cream), 8px -8px 0 -6px var(--dispatch-cream);
+}
+
+.bolt-icon {
+  clip-path: polygon(52% 0, 18% 56%, 44% 56%, 28% 100%, 82% 38%, 54% 38%);
+  background: var(--dispatch-line-strong);
+  border: 0;
+}
+
+.shield-icon {
+  clip-path: polygon(50% 0, 92% 18%, 82% 72%, 50% 100%, 18% 72%, 8% 18%);
+}
+
+.chart-icon {
+  border-radius: 3px;
+  background: linear-gradient(135deg, transparent 44%, var(--dispatch-line-strong) 45% 55%, transparent 56%);
+}
+
+.problem-section::before,
+.moves-section::before,
+.save-section::before,
+.compare-section::before,
+.access-section::before,
+.faq-section::before {
+  border-top-color: var(--shield-panel-line);
+  background:
+    linear-gradient(90deg, rgba(6, 19, 59, 0.24) 0 52px, transparent 52px calc(100% - 52px), rgba(6, 19, 59, 0.24) calc(100% - 52px)),
+    linear-gradient(180deg, rgba(6, 19, 59, 0.025), transparent);
+}
+
+.problem-section::after,
+.moves-section::after,
+.save-section::after,
+.compare-section::after,
+.access-section::after,
+.faq-section::after {
+  background: linear-gradient(90deg, transparent, rgba(6, 19, 59, 0.22), transparent);
+}
+
+@media (max-width: 1050px) {
+  .side-index {
+    position: static;
+    height: auto;
+  }
+
+  .problem-section,
+  .moves-section,
+  .save-section,
+  .compare-section,
+  .access-section,
+  .faq-section {
+    margin: 82px 24px 0;
+  }
+
+  .feature-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 82px 24px 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .problem-section,
+  .moves-section,
+  .save-section,
+  .compare-section,
+  .access-section,
+  .faq-section {
+    margin: 72px 14px 0;
+    padding: 50px 24px 92px;
+  }
+
+  .feature-strip {
+    grid-template-columns: 1fr;
+    margin: 72px 14px 0;
+  }
+
+  .feature-strip article {
+    border-right: 0;
+    border-bottom: 1px solid var(--dispatch-line);
+  }
+
+  .save-grid,
+  .problem-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .save-card,
+  .problem-card {
+    width: 100%;
+    min-width: 0;
+    border-right: 0;
+  }
+
+  .compare-table {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .compare-row {
+    min-width: 640px;
   }
 }

@@ -1,4 +1,9 @@
 const revealTargets = document.querySelectorAll("[data-reveal]");
+const sectionLinks = document.querySelectorAll("[data-section-link]");
+const progressNav = document.querySelector(".side-index nav");
+const trackedSections = [...sectionLinks]
+  .map((link) => document.getElementById(link.dataset.sectionLink))
+  .filter(Boolean);
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -19,15 +24,35 @@ revealTargets.forEach((target, index) => {
 function revealVisibleTargets() {
   revealTargets.forEach((target) => {
     const rect = target.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+    if (rect.top < window.innerHeight * 1.08 && rect.bottom > -80) {
       target.classList.add("is-visible");
     }
   });
 }
 
+function updateSectionProgress() {
+  if (!trackedSections.length || !progressNav) return;
+
+  const scrollMiddle = window.scrollY + window.innerHeight * 0.42;
+  let activeIndex = 0;
+
+  trackedSections.forEach((section, index) => {
+    if (section.offsetTop <= scrollMiddle) activeIndex = index;
+  });
+
+  sectionLinks.forEach((link, index) => {
+    link.classList.toggle("is-active", index === activeIndex);
+  });
+
+  const progress = trackedSections.length <= 1 ? 1 : activeIndex / (trackedSections.length - 1);
+  progressNav.style.setProperty("--progress", progress.toFixed(3));
+}
+
 window.addEventListener("load", revealVisibleTargets, { once: true });
+window.addEventListener("load", updateSectionProgress, { once: true });
 window.addEventListener("hashchange", () => {
   window.setTimeout(revealVisibleTargets, 80);
+  window.setTimeout(updateSectionProgress, 80);
 });
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
@@ -87,6 +112,7 @@ document.addEventListener("visibilitychange", () => {
 });
 
 let scrollSaveTicking = false;
+let sectionTicking = false;
 window.addEventListener(
   "scroll",
   () => {
@@ -96,6 +122,15 @@ window.addEventListener(
         scrollSaveTicking = false;
       });
       scrollSaveTicking = true;
+    }
+
+    if (!sectionTicking) {
+      window.requestAnimationFrame(() => {
+        revealVisibleTargets();
+        updateSectionProgress();
+        sectionTicking = false;
+      });
+      sectionTicking = true;
     }
   },
   { passive: true }

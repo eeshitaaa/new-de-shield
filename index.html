@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShieldTX | Private Trading on Hyperliquid</title>
+    <meta
+      name="description"
+      content="ShieldTX gives Hyperliquid traders private execution, wallet de-linking, and native fills without giving up custody."
+    />
+    <link rel="stylesheet" href="styles.css?v=dispatch-shield-visible-20260622" />
+  </head>
+  <body>
+    <div class="site-shell" id="top">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="ShieldTX home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>ShieldTX</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#how">How it works</a>
+          <a href="#problem">Problem</a>
+          <a href="#save">Features</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <a class="header-cta" href="#access">Request access</a>
+      </header>
+
+      <main>
+        <section class="hero section-grid">
+          <aside class="hero-rail" aria-label="Status">
+            <span>Trusted by</span>
+            <strong>Private traders</strong>
+            <i></i>
+            <span>Venue</span>
+            <strong>Hyperliquid</strong>
+          </aside>
+
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow"><span></span> Private execution layer</p>
+            <h1>Trade without exposing your wallet.</h1>
+            <p>
+              ShieldTX stands between your wallet and every Hyperliquid trade with a fresh address,
+              native fills, and no public trail back to you.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#access">Request access</a>
+              <a class="button ghost" href="#problem">See exposure</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" data-reveal>
+            <img src="assets/hero-fluid-blue.png" alt="" />
+            <div class="system-diagram" aria-hidden="true">
+              <div class="diagram-node wallet">Wallet</div>
+              <div class="diagram-node shield">ShieldTX</div>
+              <div class="diagram-node venue">Hyperliquid</div>
+              <span class="diagram-line line-a"></span>
+              <span class="diagram-line line-b"></span>
+              <span class="diagram-pulse"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-grid how-section" id="how">
+          <div class="section-label">
+            <span>01</span>
+            <p>How it works</p>
+          </div>
+
+          <div class="section-heading" data-reveal>
+            <h2>Three steps. Zero footprint.</h2>
+            <p>Funds stay yours, routing stays native, and each trade gets a clean execution path.</p>
+          </div>
+
+          <div class="workflow-board" data-reveal>
+            <article class="workflow-step">
+              <span>01</span>
+              <div>
+                <p>Deposit</p>
+                <h3>Add funds</h3>
+                <small>Deposit from any chain via Nexus. Funds sit in the ShieldTX vault on Arbitrum.</small>
+              </div>
+              <div class="mini-ledger">
+                <b>Your wallet</b>
+                <i></i>
+                <b>Nexus</b>
+                <i></i>
+                <b class="accent">Vault</b>
+              </div>
+            </article>
+
+            <article class="workflow-step">
+              <span>02</span>
+              <div>
+                <p>Execute</p>
+                <h3>Open trade</h3>
+                <small>A fresh unlinkable wallet routes natively to Hyperliquid. Same order book, no routing tax.</small>
+              </div>
+              <dl class="data-list">
+                <div><dt>Trading wallet</dt><dd>0x7A9F...3C21</dd></div>
+                <div><dt>Linked to you</dt><dd>None</dd></div>
+                <div><dt>Routing tax</dt><dd class="accent">0 bps</dd></div>
+              </dl>
+            </article>
+
+            <article class="workflow-step">
+              <span>03</span>
+              <div>
+                <p>Settle</p>
+                <h3>Close and re-shield</h3>
+                <small>Close your position, settle back to the vault, then continue trading or withdraw permissionlessly.</small>
+              </div>
+              <dl class="data-list">
+                <div><dt>Footprint</dt><dd class="accent">Zero</dd></div>
+                <div><dt>Re-shield</dt><dd class="accent">Enabled</dd></div>
+                <div><dt>Custody</dt><dd>Always yours</dd></div>
+              </dl>
+            </article>
+          </div>
+        </section>
+
+        <section class="section problem-section" id="problem">
+          <div class="section-heading split" data-reveal>
+            <div>
+              <p class="eyebrow"><span></span> Problems</p>
+              <h2>Your portfolio is public gossip.</h2>
+            </div>
+            <p>
+              Wallet analytics, copy tools, and competitors read public execution faster than most teams can respond.
+            </p>
+          </div>
+
+          <div class="problem-grid" data-reveal>
+            <article class="problem-card">
+              <h3><span>01.</span> Nothing's private.</h3>
+              <div class="exposure-visual" aria-hidden="true">
+                <div><span>P&amp;L</span><i></i><b>+$24,810</b></div>
+                <div><span>Position</span><i></i><b>LONG 10x</b></div>
+                <div><span>Entry</span><i></i><b>40.188</b></div>
+                <div><span>Size</span><i></i><b>$142,000</b></div>
+              </div>
+              <p>Your P&amp;L, position history, and account size are visible the moment you place a trade.</p>
+            </article>
+
+            <article class="problem-card">
+              <h3><span>02.</span> You're someone's edge.</h3>
+              <div class="signal-visual" aria-hidden="true">
+                <span></span>
+                <div>Trade signal <b>Copied in 0.8s</b></div>
+                <span></span>
+              </div>
+              <p>Copy tools mirror trades within seconds of execution and turn your strategy into their entry.</p>
+            </article>
+
+            <article class="problem-card">
+              <h3><span>03.</span> Institutions walk away.</h3>
+              <div class="denied-visual" aria-hidden="true">
+                <div>Vault review <b>Access denied</b></div>
+                <span>Book visible</span>
+                <span>Size exposed</span>
+              </div>
+              <p>Vaults and teams cannot operate where competitors can read the book every hour.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section moves-section">
+          <div class="moves-copy" data-reveal>
+            <p class="eyebrow"><span></span> The usual moves</p>
+            <h2>Still not enough.</h2>
+          </div>
+
+          <div class="moves-list" data-reveal>
+            <article>
+              <span>01</span>
+              <h3>Multiple wallets</h3>
+              <p>Fractures your workflow.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Wallet clustering</h3>
+              <p>Patterns give you away.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>CEX routing</h3>
+              <p>Control is no longer yours.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section save-section" id="save">
+          <div class="section-heading split" data-reveal>
+            <div>
+              <p class="eyebrow"><span></span> How we save you</p>
+              <h2>Private execution without the tradeoffs.</h2>
+            </div>
+            <p>ShieldTX keeps the book native and the wallet trail unreadable.</p>
+          </div>
+
+          <div class="save-grid" data-reveal>
+            <article class="save-card">
+              <span>/ 01</span>
+              <h3>Fresh wallet per trade</h3>
+              <div class="card-graphic graph-shield" aria-hidden="true">
+                <i></i><i></i><i></i>
+                <b>Shielded</b>
+              </div>
+              <p>Every order uses a fresh unlinkable trading wallet.</p>
+            </article>
+            <article class="save-card">
+              <span>/ 02</span>
+              <h3>Native fills</h3>
+              <div class="card-graphic graph-bars" aria-hidden="true">
+                <i></i><i></i><i></i><i></i>
+                <b>0 bps</b>
+              </div>
+              <p>Orders route to Hyperliquid directly with no execution penalty.</p>
+            </article>
+            <article class="save-card">
+              <span>/ 03</span>
+              <h3>Compliant by design</h3>
+              <div class="card-graphic graph-check" aria-hidden="true">
+                <b>Policy clear</b>
+                <i></i>
+              </div>
+              <p>Designed for serious traders, vaults, and desks.</p>
+            </article>
+            <article class="save-card">
+              <span>/ 04</span>
+              <h3>You hold the keys</h3>
+              <div class="card-graphic graph-transfer" aria-hidden="true">
+                <b>Vault</b>
+                <i></i>
+                <b>Wallet</b>
+              </div>
+              <p>No custody loss. Permissionless withdrawals remain available.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section compare-section" id="compare">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow"><span></span> Compare</p>
+            <h2>See how we're different.</h2>
+          </div>
+
+          <div class="compare-table" data-reveal>
+            <div class="compare-row compare-head">
+              <span></span>
+              <b>ShieldTX</b>
+              <b>Direct HL</b>
+              <b>Multi-wallet</b>
+              <b>CEX</b>
+            </div>
+            <div class="compare-row"><span>Position confidentiality</span><b>Yes</b><i>No</i><i>No</i><b>Yes</b></div>
+            <div class="compare-row"><span>Non-custodial</span><b>Yes</b><b>Yes</b><b>Yes</b><i>No</i></div>
+            <div class="compare-row"><span>Copy-bot resistant</span><b>Yes</b><i>No</i><i>No</i><b>Yes</b></div>
+            <div class="compare-row"><span>Wallet de-linked</span><b>Yes</b><i>No</i><i>No</i><i>No</i></div>
+            <div class="compare-row"><span>Operational overhead</span><b>Low</b><b>Low</b><i>High</i><b>Low</b></div>
+          </div>
+        </section>
+
+        <section class="section access-section" id="access">
+          <div class="access-panel" data-reveal>
+            <div>
+              <p class="eyebrow"><span></span> Private beta</p>
+              <h2>Trade privately before the crowd catches up.</h2>
+              <p>Early access is open for Hyperliquid traders, vault operators, and teams that need private execution.</p>
+            </div>
+            <form>
+              <input type="email" placeholder="Email address" aria-label="Email address" />
+              <button type="submit">Request access</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="section faq-section" id="faq">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow"><span></span> FAQ</p>
+            <h2>Have questions?</h2>
+          </div>
+
+          <div class="faq-list" data-reveal>
+            <details open>
+              <summary>Is this like Tornado Cash?</summary>
+              <p>No. ShieldTX is a compliant trading solution built for private trading execution, not general-purpose mixing.</p>
+            </details>
+            <details>
+              <summary>Does shielding affect my fills?</summary>
+              <p>No. Execution is native Hyperliquid: same order book, same liquidity, no slippage premium for shielding.</p>
+            </details>
+            <details>
+              <summary>Who controls my funds?</summary>
+              <p>You do. Funds are locked in smart contracts and withdrawals remain permissionless.</p>
+            </details>
+            <details>
+              <summary>What pairs are supported?</summary>
+              <p>Every pair available on Hyperliquid is supported.</p>
+            </details>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <a class="brand" href="#top">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>ShieldTX</span>
+          </a>
+          <p>Trade without exposing your wallet.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="#how">How it works</a>
+          <a href="#save">Features</a>
+          <a href="#compare">Compare</a>
+          <a href="#access">Request access</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="script.js?v=dispatch-shield-20260622"></script>
+  </body>
+</html>
